@@ -1,8 +1,8 @@
-"""Modulo dos Clientes"""
+"""Modulo Banco"""
 #-----------------------
 # BIBLIOTECAS
 #-----------------------
-from .cliente import Cliente
+from .banco import Banco
 #-----------------------
 # CONSTANTES
 #-----------------------

@@ -8,6 +8,9 @@
 #-----------------------
 from .conta import Conta
 #-----------------------
+# CONSTANTES
+#-----------------------
+#-----------------------
 # CLASSES
 #-----------------------
 class ContaCorrente(Conta): 
@@ -68,7 +71,9 @@ class ContaCorrente(Conta):
             return;
         print(( "Saque não efetuado, pois valor do saldo "
                 "é menor que o saque solicitado\n"));
-
+#-----------------------
+# FUNÇÕES()
+#-----------------------
 #-----------------------
 # Main()
 #-----------------------  

@@ -9,6 +9,9 @@
 from datetime import datetime
 from abc import ABC, abstractmethod
 #-----------------------
+# CONSTANTES
+#-----------------------
+#-----------------------
 # CLASSES
 #-----------------------
 class Pessoa(ABC):
@@ -55,6 +58,9 @@ class Pessoa(ABC):
     @abstractmethod
     def conta(self,conta):
         pass
+#-----------------------
+# FUNÇÕES()
+#-----------------------
 #-----------------------
 # Main()
 #-----------------------  

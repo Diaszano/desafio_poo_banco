@@ -8,6 +8,9 @@
 #-----------------------
 from .conta import Conta
 #-----------------------
+# CONSTANTES
+#-----------------------
+#-----------------------
 # CLASSES
 #-----------------------
 class ContaPoupanca(Conta): 
@@ -54,7 +57,9 @@ class ContaPoupanca(Conta):
             return;
         print(( "Saque não efetuado, pois valor do saldo "
                 "é menor que o saque solicitado\n"));
-
+#-----------------------
+# FUNÇÕES()
+#-----------------------
 #-----------------------
 # Main()
 #-----------------------  

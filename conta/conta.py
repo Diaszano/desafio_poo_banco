@@ -9,6 +9,9 @@
 from random import randint
 from abc import ABC, abstractmethod
 #-----------------------
+# CONSTANTES
+#-----------------------
+#-----------------------
 # CLASSES
 #-----------------------
 class Conta(ABC):
@@ -65,6 +68,9 @@ class Conta(ABC):
     @abstractmethod
     def sacar(self,valor):
         pass;
+#-----------------------
+# FUNÇÕES()
+#-----------------------
 #-----------------------
 # Main()
 #-----------------------  
