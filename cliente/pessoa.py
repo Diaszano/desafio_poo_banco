@@ -65,5 +65,5 @@ class Pessoa(ABC):
 # Main()
 #-----------------------  
 if(__name__ == "__main__"):
-    a = Pessoa(nome="Lucas Dias",data_de_nascimento="29/02/2000",cpf='');
+    pass;
 #-----------------------  

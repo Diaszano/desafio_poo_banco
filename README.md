@@ -9,8 +9,8 @@ Criar um sistema bancário (extremamente simples) que tem clientes, contas e um 
 Dicas:
 Criar classe Cliente que herda da classe Pessoa (Herança)
     Pessoa tem nome e idade (com getters)
-    Cliente TEM conta (Agregação da classe ContaCorrente ou ContaPoupanca)
-Criar classes ContaPoupanca e ContaCorrente que herdam de Conta
+    Cliente TEM conta (Agregação da classe ContaCorrente ou ContaPoupanças)
+Criar classes ContaPoupanças e ContaCorrente que herdam de Conta
     ContaCorrente deve ter um limite extra
     Contas têm agência, número da conta e saldo
     Contas devem ter método para depósito
@@ -18,7 +18,7 @@ Criar classes ContaPoupanca e ContaCorrente que herdam de Conta
     polimorfismo - as subclasses que implementam o método sacar)
 Criar classe Banco para AGREGAR classes de clientes e de contas (Agregação)
 Banco será responsável autenticar o cliente e as contas da seguinte maneira:
-    Banco tem contas e clentes (Agregação)
+    Banco tem contas e clientes (Agregação)
     - Checar se a agência é daquele banco
     - Checar se o cliente é daquele banco
     - Checar se a conta é daquele banco

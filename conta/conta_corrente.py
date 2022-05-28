@@ -78,10 +78,5 @@ class ContaCorrente(Conta):
 # Main()
 #-----------------------  
 if(__name__ == "__main__"):
-    a = ContaCorrente(22,1500.98158418);
-    b = ContaCorrente(22,1500.98158418);
-    c = ContaCorrente(22,1500.98158418);
-    d = ContaCorrente(22,1500.98158418);
-    e = ContaCorrente(22,1500.98158418);
-    print(a,b,c,d,e);
+    pass;
 #-----------------------  

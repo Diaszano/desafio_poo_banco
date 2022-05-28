@@ -64,8 +64,5 @@ class ContaPoupanca(Conta):
 # Main()
 #-----------------------  
 if(__name__ == "__main__"):
-    a = ContaPoupanca(22,1500.98158418);
-    a.depositar(15.00)
-    a.sacar(8000);
-    print(a);
+    pass;
 #-----------------------  
