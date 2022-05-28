@@ -1,11 +1,12 @@
 """Classe das Contas
 
-    A Classe das Contas é uma classe abstrata aonde criaremos o molde de contas
-    que queremos seguir nas classes futuras.
+    A Classe das Contas é uma classe abstrata aonde criaremos o molde 
+    de contas que queremos seguir nas classes futuras.
 """
 #-----------------------
 # BIBLIOTECAS
 #-----------------------
+from random import randint
 from abc import ABC, abstractmethod
 #-----------------------
 # CLASSES
@@ -13,18 +14,19 @@ from abc import ABC, abstractmethod
 class Conta(ABC):
     """Classe das Contas
 
-        A classe contas é uma classe abstrata aonde trataremos de moldar o perfil 
-        das classes de contas correntes e poupança.
+        A classe contas é uma classe abstrata aonde trataremos de 
+        moldar o perfil das classes de contas correntes e poupança.
     """
-    __numero_de_conta:int = 0;
+    __proxima_conta: int = 1;
     def __init__(self,agencia:int=0,saldo:float=0.0) -> None:
         """Classe das Contas
 
             Geramos a classe conta.
         """
-        self.__agencia:int = agencia;
-        self.__saldo:float = saldo;
-        self.__gerarConta();
+        self.__agencia:int     = agencia;
+        self.__saldo  :float   = saldo;
+        self.__conta  :int     = self.__proxima_conta;
+        Conta.__proxima_conta += 1;
     
     @property
     def agencia(self)->int:
@@ -43,25 +45,18 @@ class Conta(ABC):
         return round(self.__saldo,2);
     
     @saldo.setter
-    def _saldo(self,valor)->None:
+    def _saldo(self,valor:float)->None:
         """SETTER Saldo
             
             Alteramos o valor do saldo.
         """
-        if isinstance(valor,float):
-            self.__agencia = valor;
-            return;
-        elif isinstance(valor,int):
-            self.__agencia = float(valor);
-            return;
-        raise TypeError(f'Valor não pode ser "{type(valor)}" ele tem que ser [int | float!]');
+        if not isinstance(valor, (int, float)):
+            raise ValueError("Saldo precisa ser numérico");
+        self.__saldo = valor;
     
-    def __gerarConta(self):
-        """Gerador de conta
-            
-            Geramos contas com valores sequenciais.
-        """
-        self.__conta += self.__numero_de_conta + 1;
+    @property
+    def conta(self):
+        return self.__conta;
 
     @abstractmethod
     def depositar(self,valor):

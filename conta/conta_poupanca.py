@@ -1,7 +1,7 @@
-"""Classe das Contas Correntes
+"""Classe das Contas Poupança
 
-    A Classe das Contas correntes é uma classe aonde criaremos as 
-    contas correntes dos users.
+    A Classe das Contas poupança é uma classe aonde criaremos as 
+    contas poupança dos users.
 """
 #-----------------------
 # BIBLIOTECAS
@@ -10,20 +10,17 @@ from .conta import Conta
 #-----------------------
 # CLASSES
 #-----------------------
-class ContaCorrente(Conta): 
+class ContaPoupanca(Conta): 
 
-    __custo_deposito: float = 5.50;
-    __custo_saque   : float = 7.50;
+    __custo_deposito    : float = 3.75;
+    __custo_saque       : float = 4.65;
     
-    def __init__(   self, agencia: int = 0, saldo: float = 0,
-                    limite:float = 100.0) -> None:
+    def __init__(self, agencia: int = 0, saldo: float = 0) -> None:
         super().__init__(agencia, saldo);
-        self.__limite = limite;
     
     def __str__(self):
         mensagem:str = f"Conta: {self.conta} Agência: {self.agencia}\n";
         mensagem    += f"Saldo da conta: R${self.saldo}\n";
-        mensagem    += f"Limite da conta: R${self.limite}\n";
         return mensagem;
     
     @property
@@ -33,38 +30,27 @@ class ContaCorrente(Conta):
     @property
     def custo_deposito(self)->float:
         return self.__custo_deposito;
-
-    @property
-    def limite(self)->float:
-        return round(self.__limite,2);
     
-    @limite.setter
-    def _limite(self,valor)->None:
-        if(isinstance(valor,int) or isinstance(valor,float)):
-            self.__limite += valor;
-            return;
-        raise TypeError((   f'Valor não pode ser "{type(valor)}" '
-                            'ele tem que ser [int | float!]'));
     
     def depositar(self,valor:float=0):
         if(not (isinstance(valor,int) or isinstance(valor,float))):
             return;
         valor = float(valor - self.custo_deposito);
         if valor > 0:
-            print(f"Valor {round(valor,2)} depositado com sucesso")
+            print(f"Valor {round(valor,2)} depositado com sucesso");
             valor += self.saldo;
             self._saldo = valor;
-            return 
+            return; 
         print(( "Deposito não efetuado, pois valor do deposito "
                 "é menor ou igual o custo de deposito na conta"));
-    
+
     def sacar(self, valor:float=0):
         if(not (isinstance(valor,int) or isinstance(valor,float))):
             return;
-        saldo = float(self.saldo + self.limite);
         custo = float(self.custo_saque + valor);
-        if saldo >= custo:
-            self._saldo = saldo-custo;
+        if self.saldo >= custo:
+            print(f"Valor {round(valor,2)} sacado com sucesso");
+            self._saldo = self._saldo-custo;
             return;
         print(( "Saque não efetuado, pois valor do saldo "
                 "é menor que o saque solicitado\n"));
@@ -73,10 +59,8 @@ class ContaCorrente(Conta):
 # Main()
 #-----------------------  
 if(__name__ == "__main__"):
-    a = ContaCorrente(22,1500.98158418);
-    b = ContaCorrente(22,1500.98158418);
-    c = ContaCorrente(22,1500.98158418);
-    d = ContaCorrente(22,1500.98158418);
-    e = ContaCorrente(22,1500.98158418);
-    print(a,b,c,d,e);
+    a = ContaPoupanca(22,1500.98158418);
+    a.depositar(15.00)
+    a.sacar(8000);
+    print(a);
 #-----------------------  
