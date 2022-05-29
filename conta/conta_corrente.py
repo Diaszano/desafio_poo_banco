@@ -54,10 +54,10 @@ class ContaCorrente(Conta):
             return;
         valor = float(valor - self.custo_deposito);
         if valor > 0:
-            print(f"Valor {round(valor,2)} depositado com sucesso")
+            print(f"Valor {round(valor,2)} depositado com sucesso");
             valor += self.saldo;
             self._saldo = valor;
-            return 
+            return;
         print(( "Deposito não efetuado, pois valor do deposito "
                 "é menor ou igual o custo de deposito na conta"));
     

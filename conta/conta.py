@@ -6,7 +6,6 @@
 #-----------------------
 # BIBLIOTECAS
 #-----------------------
-from random import randint
 from abc import ABC, abstractmethod
 #-----------------------
 # CONSTANTES

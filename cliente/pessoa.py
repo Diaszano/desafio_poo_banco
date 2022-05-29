@@ -7,14 +7,13 @@
 # BIBLIOTECAS
 #-----------------------
 from datetime import datetime
-from abc import ABC, abstractmethod
 #-----------------------
 # CONSTANTES
 #-----------------------
 #-----------------------
 # CLASSES
 #-----------------------
-class Pessoa(ABC):
+class Pessoa:
     def __init__(   self,nome:str = '',
                     data_de_nascimento:str ='00/00/0000',
                     cpf:str='000.000.000-00'
@@ -53,11 +52,6 @@ class Pessoa(ABC):
         idade           = data_atual - data_nascimento;
         idade           = int(idade.days/365);
         self.__idade    = idade;
-        print(idade);
-    
-    @abstractmethod
-    def conta(self,conta):
-        pass
 #-----------------------
 # FUNÇÕES()
 #-----------------------

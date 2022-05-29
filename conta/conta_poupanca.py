@@ -15,8 +15,8 @@ from .conta import Conta
 #-----------------------
 class ContaPoupanca(Conta): 
 
-    __custo_deposito    : float = 3.75;
-    __custo_saque       : float = 4.65;
+    __custo_deposito:float = 3.75;
+    __custo_saque   :float = 4.65;
     
     def __init__(self, agencia: int = 0, saldo: float = 0) -> None:
         super().__init__(agencia, saldo);
